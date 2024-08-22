@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Switch, Alert, Pressable } from 'react-native';
-import { TouchableOpacity } from 'react-native-web';
+import { StyleSheet, Text, View, TextInput, Switch, Alert, TouchableOpacity } from 'react-native';
 
 export default function App() {
 
@@ -9,6 +8,9 @@ export default function App() {
   const [peso, setPeso] = useState("");
   const [genero, setGenero] = useState(false);
   const toggleSwitch = () => setGenero(previousState => !previousState);
+  const handleCalc = () => {
+    Alert.alert("Opa", "Mensagem");
+  }
 
   return ( 
     <View style={styles.container}>
@@ -37,7 +39,7 @@ export default function App() {
         value={peso} 
         onChangeText={(text) => setPeso(text.replace(/\D/g, ""))}/>
       <TouchableOpacity 
-        onPress={() => Alert.alert("Calculo realizado!", "Seu IMC é: ")} 
+        onPress={handleCalc}
         style={styles.button}
       >
         <Text style={styles.buttonText}>Calcular</Text>
@@ -50,7 +52,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#335B38',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -71,7 +73,7 @@ const styles = StyleSheet.create({
     borderColor: "#000",
   },
   button: {
-    backgroundColor: "grey",
+    backgroundColor: "#143618",
     width: "80%",
     height: 54,
     justifyContent: "center",
@@ -79,10 +81,12 @@ const styles = StyleSheet.create({
     elevation: 2,
     borderRadius: 8,
     marginTop: 16,
+    borderWidth: 2, 
+    borderColor: '#031906', 
   },
   buttonText: {
     fontFamily: "Poppins_600SemiBold",
-    color: "FFF",
-    fontSize: 12,
+    color: "white",
+    fontSize: 20,
   }
 });
