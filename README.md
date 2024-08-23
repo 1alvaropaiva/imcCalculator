@@ -1,4 +1,4 @@
-<h3 align="center">Calculadora de IMC</h3>
+<h1 align="center">Calculadora de IMC</h1>
 
 ###
 
